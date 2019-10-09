@@ -22,7 +22,7 @@ $(document).ready(function () {
         // Grabbed values from text boxes
         var trainName = $("#name").val().trim();
         var trainDestination = $("#destination").val().trim();
-        var trainTime = $("#train-time").val().trim();
+        var trainTime = moment($("#train-time").val().trim()).format("hh:mm");
         var trainFrequency = $("#frequency-min").val().trim();
 
         // Code for handling the push
@@ -75,7 +75,7 @@ $(document).ready(function () {
         var firstTime = childSnapshot.val().time;
 
         // First Time (pushed back 1 year to make sure it comes before current time)
-        var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
+        var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
         console.log(firstTimeConverted);
 
         // Current Time
@@ -95,7 +95,7 @@ $(document).ready(function () {
         console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
         // Next Train
-        var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("HH:mm: A");
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
 
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
@@ -104,7 +104,7 @@ $(document).ready(function () {
             $("<td>").text(trainName),
             $("<td>").text(trainDestination),
             $("<td>").text(tFrequency),
-            $("<td>").text(moment(nextTrain).format("HH:mm")),
+            $("<td>").text(moment(nextTrain).format("hh:mm")),
             $("<td>").text(tMinutesTillTrain));
         $("#train-table > tbody").append(newRow);
 
@@ -112,3 +112,4 @@ $(document).ready(function () {
 }, function (errorObject) {
     console.log("Errors handled: " + errorObject.code);
 });
+
