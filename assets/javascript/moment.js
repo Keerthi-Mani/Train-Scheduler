@@ -30,7 +30,8 @@ $(document).ready(function () {
             name: trainName,
             desti: trainDestination,
             time: trainTime,
-            freq: trainFrequency
+            freq: trainFrequency,
+            TimeStamp: firebase.database.ServerValue.TIMESTAMP
         });
 
         alert("Train successfully added");
@@ -68,10 +69,10 @@ $(document).ready(function () {
         console.log(trainFrequency);
 
         // variable is declared
-        var tFrequency = 3;
+        var tFrequency = childSnapshot.val().freq;
 
         // Time 
-        var firstTime = 0;
+        var firstTime = childSnapshot.val().time;
 
         // First Time (pushed back 1 year to make sure it comes before current time)
         var firstTimeConverted = moment(firstTime, "HH:mm").subtract(1, "years");
@@ -94,7 +95,7 @@ $(document).ready(function () {
         console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
 
         // Next Train
-        var nextTrain = moment().add(tMinutesTillTrain, "minutes");
+        var nextTrain = moment().add(tMinutesTillTrain, "minutes").format("HH:mm: A");
 
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
 
@@ -108,5 +109,6 @@ $(document).ready(function () {
         $("#train-table > tbody").append(newRow);
 
     });
-
+}, function (errorObject) {
+    console.log("Errors handled: " + errorObject.code);
 });
