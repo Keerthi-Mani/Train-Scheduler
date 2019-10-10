@@ -22,7 +22,7 @@ $(document).ready(function () {
         // Grabbed values from text boxes
         var trainName = $("#name").val().trim();
         var trainDestination = $("#destination").val().trim();
-        var trainTime = moment($("#train-time").val().trim()).format("hh:mm");
+        var trainTime = moment($("#train-time").val().trim(), "HH:mm").format("hh:mm");
         var trainFrequency = $("#frequency-min").val().trim();
 
         // Code for handling the push
