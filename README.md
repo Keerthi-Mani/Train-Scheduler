@@ -21,3 +21,9 @@ Form Validation for correct time input
 ## Link
 
 [Train-Scheduler](https://keerthi-mani.github.io/Train-Scheduler/)
+
+## Screenshots
+
+![image](https://user-images.githubusercontent.com/52920074/67153509-c5ec1b00-f2b8-11e9-8c2e-e53bdb62039c.png)
+
+![image](https://user-images.githubusercontent.com/52920074/67153510-d3a1a080-f2b8-11e9-8a08-268649546f15.png)
