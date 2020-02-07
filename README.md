@@ -7,15 +7,18 @@ The objective was to create a train schedule application that incorporates Fireb
 ## Requirements
 
 ### App must suit these basic specs:
+
 When adding trains, administrators should be able to submit the following:
-* Train Name
-* Destination
-* First Train Time -- in military time
-* Frequency -- in minutes
-* Calculate when the next train will arrive; relative to the current time.
-* Users from many different machines must be able to view same train times.
+
+- Train Name
+- Destination
+- First Train Time -- in military time
+- Frequency -- in minutes
+- Calculate when the next train will arrive; relative to the current time.
+- Users from many different machines must be able to view same train times.
 
 ## Added Functionality
+
 Form Validation for correct time input
 
 ## Link
@@ -27,4 +30,3 @@ Form Validation for correct time input
 ![image](https://user-images.githubusercontent.com/52920074/67153509-c5ec1b00-f2b8-11e9-8c2e-e53bdb62039c.png)
 
 ![image](https://user-images.githubusercontent.com/52920074/67153537-1bc0c300-f2b9-11e9-8140-999467f70e20.png)
-
