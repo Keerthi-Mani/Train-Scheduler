@@ -34,6 +34,18 @@ When adding trains, administrators should be able to submit the following:
     firebase.initializeApp(firebaseConfig);
 ```
 
+### Rules for Real-time-database
+
+```
+{
+  /* Visit https://firebase.google.com/docs/database/security to learn more about security rules. */
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+```
+
 ## Added Functionality
 
 Form Validation for correct time input
