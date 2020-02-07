@@ -48,6 +48,12 @@ Form Validation for correct time input
 
 ![image](https://user-images.githubusercontent.com/52920074/67153537-1bc0c300-f2b9-11e9-8140-999467f70e20.png)
 
+## Feedback and issues:
+
+I really appreciate your feedback.
+
+Additionally, if you find any issue when running the app or any other other matter, please feel free to open an issue in this Github repo.
+
 ## Author
 
 <em>Keerthi</em> - 2019
