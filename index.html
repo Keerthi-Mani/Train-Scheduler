@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
     <!-- Bootstrap File -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
     <!-- Added Moment JS -->
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
@@ -20,118 +24,121 @@
     <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 
     <title>Train Scheduler</title>
-</head>
+  </head>
 
-<body>
-
+  <body style="background-image: url(stock-photo-307285327.jpg);">
     <!-- Main Bootstrap Search -->
-    <div class="container">
+    <div class=" container">
+      <!-- Jumbotron for Title -->
+      <div class="jumbotron" style="background-color: navy; color: white;">
+        <h1 class="text-center">
+          <strong>
+            <i class="fa fa-train" aria-hidden="true"></i> TRAIN
+            SCHEDULER</strong
+          >
+        </h1>
+        <h3 class=" text-center">Choo Choo. Chee Chee.</h3>
+      </div>
 
-        <!-- Jumbotron for Title -->
-        <div class="jumbotron" style="background-color: rgb(21, 134, 204); color: white;">
-            <h1 class="text-center">
-                <strong>
-                    <i class="fa fa-train" aria-hidden="true"></i> TRAIN SCHEDULER</strong>
-            </h1>
-            <h3 class=" text-center">Choo Choo. Chee Chee.</h3>
-        </div>
-
-
-        <!-- Row for Current Train Schedule -->
-        <div class="row">
-            <div class="col-sm-12">
-                <br>
-                <!-- First card is for handling the Add Train parameters -->
-                <div class="card">
-                    <div class="card-header" style="background-color: rgb(21, 134, 204) ;color: white;">
-                        <strong>
-                            <i class="fa fa-train" aria-hidden="true"></i> Current Train Schedule</strong>
-                    </div>
-                    <div class="card-body">
-                        <table class="table table-hover" id='train-table'>
-                            <thead>
-                                <tr>
-                                    <th>Train Name</th>
-                                    <th>Destination</th>
-                                    <th>Frequency (min)</th>
-                                    <th>Next Arrival</th>
-                                    <th>Minutes Away</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <!-- Row for Current Train Schedule -->
+      <div class="row">
+        <div class="col-sm-12">
+          <br />
+          <!-- First card is for handling the Add Train parameters -->
+          <div class="card">
+            <div
+              class="card-header"
+              style="background-color: navy;color: white;"
+            >
+              <strong>
+                <i class="fa fa-train" aria-hidden="true"></i> Current Train
+                Schedule</strong
+              >
             </div>
-        </div>
-
-
-        <!-- Row for Adding the Train -->
-        <div class="row">
-            <div class="col-sm-12">
-                <br>
-                <!-- First card is for handling the Add Train parameters -->
-                <div class="card">
-                    <div class="card-header" style="background-color:rgb(21, 134, 204) ;color: white;">
-                        <strong>
-                            <i class="fa fa-train" aria-hidden="true"></i> Add Train</strong>
-                    </div>
-                    <div class="card-body">
-
-                        <!-- Here we create an HTML Form for handling the inputs-->
-                        <form role="form">
-
-                            <!-- Here we create the text box for capturing the train name-->
-                            <div class="form-group">
-                                <label for="train-name">
-                                    <strong>Train Name</strong>
-                                </label>
-                                <input type="text" class="form-control" id="name">
-                            </div>
-
-                            <!-- Here we create the text box for capturing the train destination-->
-                            <div class="form-group">
-                                <label for="train-destination">
-                                    <strong>Destination</strong>
-                                </label>
-                                <input type="text" class="form-control" id="destination">
-
-                            </div>
-
-                            <!-- Here we capture the Time Parameter-->
-                            <div class="form-group">
-                                <label for="time">
-                                    <strong>First Train Time (HH:mm Military Time)</strong>
-                                </label>
-                                <input type="text" class="form-control" id="train-time">
-                            </div>
-
-                            <!-- Here we capture the frequency minutes Parameter-->
-                            <div class="form-group">
-                                <label for="min">
-                                    <strong>Frequency (min)</strong>
-                                </label>
-                                <input type="text" class="form-control" id="frequency-min">
-                            </div>
-
-                            <!-- Here we have our final submit and clear button -->
-                            <button type="submit" class="btn btn-primary" id="add-train">
-                                <i class="fa fa-submit"></i> <strong>Submit</strong></button>
-                            <button class="btn btn-primary" id="clear-all">
-                                <i class="fa fa-trash"></i> <strong>Clear Results</strong></button>
-
-                        </form>
-                    </div>
-                </div>
+            <div class="card-body">
+              <table class="table table-hover" id="train-table">
+                <thead>
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>Frequency (min)</th>
+                    <th>Next Arrival</th>
+                    <th>Minutes Away</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
             </div>
+          </div>
         </div>
+      </div>
 
-        <!-- JQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <!-- Row for Adding the Train -->
+      <div class="row">
+        <div class="col-sm-12">
+          <br />
+          <!-- First card is for handling the Add Train parameters -->
+          <div class="card">
+            <div
+              class="card-header"
+              style="background-color: navy ;color: white;"
+            >
+              <strong>
+                <i class="fa fa-train" aria-hidden="true"></i> Add Train</strong
+              >
+            </div>
+            <div class="card-body">
+              <!-- Here we create an HTML Form for handling the inputs-->
+              <form role="form">
+                <!-- Here we create the text box for capturing the train name-->
+                <div class="form-group">
+                  <label for="train-name">
+                    <strong>Train Name</strong>
+                  </label>
+                  <input type="text" class="form-control" id="name" />
+                </div>
 
-        <script src="assets/javascript/moment.js"></script>
+                <!-- Here we create the text box for capturing the train destination-->
+                <div class="form-group">
+                  <label for="train-destination">
+                    <strong>Destination</strong>
+                  </label>
+                  <input type="text" class="form-control" id="destination" />
+                </div>
+
+                <!-- Here we capture the Time Parameter-->
+                <div class="form-group">
+                  <label for="time">
+                    <strong>First Train Time (HH:mm Military Time)</strong>
+                  </label>
+                  <input type="text" class="form-control" id="train-time" />
+                </div>
+
+                <!-- Here we capture the frequency minutes Parameter-->
+                <div class="form-group">
+                  <label for="min">
+                    <strong>Frequency (min)</strong>
+                  </label>
+                  <input type="text" class="form-control" id="frequency-min" />
+                </div>
+
+                <!-- Here we have our final submit and clear button -->
+                <button type="submit" class="btn btn-primary" id="add-train">
+                  <i class="fa fa-submit"></i> <strong>Submit</strong>
+                </button>
+                <button class="btn btn-primary" id="clear-all">
+                  <i class="fa fa-trash"></i> <strong>Clear Results</strong>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JQuery -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script src="assets/javascript/moment.js"></script>
     </div>
-</body>
-
+  </body>
 </html>
