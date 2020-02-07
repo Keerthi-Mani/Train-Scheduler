@@ -74,10 +74,10 @@ $(document).ready(
       var trainFrequency = childSnapshot.val().freq;
 
       // Train Info
-      console.log(trainName);
-      console.log(trainDestination);
-      console.log(trainTime);
-      console.log(trainFrequency);
+      // console.log(trainName);
+      // console.log(trainDestination);
+      // console.log(trainTime);
+      // console.log(trainFrequency);
 
       // variable is declared
       var tFrequency = childSnapshot.val().freq;
