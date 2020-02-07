@@ -69,3 +69,7 @@ Additionally, if you find any issue when running the app or any other other matt
 ## Author
 
 <em>Keerthi</em> - 2019
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
