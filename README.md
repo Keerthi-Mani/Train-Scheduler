@@ -17,6 +17,23 @@ When adding trains, administrators should be able to submit the following:
 - Calculate when the next train will arrive; relative to the current time.
 - Users from many different machines must be able to view same train times.
 
+## Firebase Configuration
+
+```
+ // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyA4171ciP79ckLBPoSd9_isrRm7YooNo1s",
+      authDomain: "project-1-f9d74.firebaseapp.com",
+      databaseURL: "https://project-1-f9d74.firebaseio.com",
+      projectId: "project-1-f9d74",
+      storageBucket: "project-1-f9d74.appspot.com",
+      messagingSenderId: "232793427079",
+      appId: "1:232793427079:web:ead826e9dbdd62a473fc22"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+```
+
 ## Added Functionality
 
 Form Validation for correct time input
